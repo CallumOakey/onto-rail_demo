@@ -1,0 +1,50 @@
+ontology <http://www.mesea.fr/onto-maintenance/ontologies/main/degradationPoints.swd>.
+
+import <http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl> as tm.
+
+rule measurements-to-degradation-points
+if ?mesure is a tm:Measurement 
+    and ?mesure tm:precededByMeasurement ?previous
+    and ?mesure tm:followedByMeasurement ?next
+    and ?mesure tm:deviationValue ?mValue
+    and ?previous tm:deviationValue ?pValue
+    and ?next tm:deviationValue ?nValue
+then 
+    (if ?pValue >= ?mValue and ?nValue >= ?mValue
+      then ?mesure is a tm:DegradationPoint)
+      
+    and(if ?pValue =< ?mValue and ?nValue =< ?mValue
+      then ?mesure is a tm:DegradationPoint).
+
+rule nominal-points
+if ?poi is a tm:DegradationPoint
+    and ?poi tm:deviationValue ?value
+    and ?value < "2.0"^^xsd:float
+    and ?value > "-2.0"^^xsd:float
+then ?poi is a tm:NominalPoint.
+
+rule alert-points
+if ?poi is a tm:DegradationPoint
+    and ?poi tm:deviationValue ?value
+    and ?value < "3.0"^^xsd:float
+    and ?value > "-3.0"^^xsd:float
+    and NAF(?poi is a tm:NominalPoint)
+then ?poi is a tm:AlertPoint.
+
+rule intervention-points
+if ?poi is a tm:DegradationPoint
+    and ?poi tm:deviationValue ?value
+    and ?value < "5.0"^^xsd:float
+    and ?value > "-5.0"^^xsd:float
+    and NAF(?poi is a tm:NominalPoint)
+    and NAF(?poi is a tm:AlertPoint)
+then ?poi is a tm:InterventionPoint.
+
+rule slowdown-points
+if ?poi is a tm:DegradationPoint
+    and ?poi tm:deviationValue ?value
+then (if ?value >= "5.0"^^xsd:float
+      then ?poi is a tm:SlowdownPoint)
+    and (if ?value =< "-5.0"^^xsd:float
+      then ?poi is a tm:SlowdownPoint).
+    

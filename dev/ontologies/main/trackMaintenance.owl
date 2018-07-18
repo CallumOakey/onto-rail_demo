@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#"
+     xml:base="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#composedOfRail -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#composedOfRail">
+        <owl:inverseOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isRailForTrack"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Track"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#followedByMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#followedByMeasurement">
+        <owl:inverseOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#precededByMeasurement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#hasDegradationPoint -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#hasDegradationPoint">
+        <owl:inverseOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isDegradationPointForRail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#hasMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#hasMeasurement">
+        <owl:inverseOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isMeasurementForRail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isDegradationPointForRail -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isDegradationPointForRail">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isMeasurementForRail -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isMeasurementForRail">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isRailForTrack -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#isRailForTrack">
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Track"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#precededByMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#precededByMeasurement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#deviationValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#deviationValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#position -->
+
+    <owl:DatatypeProperty rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#position">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#AlertPoint -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#AlertPoint">
+        <rdfs:subClassOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint">
+        <rdfs:subClassOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#InterventionPoint -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#InterventionPoint">
+        <rdfs:subClassOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Measurement"/>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#NominalPoint -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#NominalPoint">
+        <rdfs:subClassOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Rail"/>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#SlowdownPoint -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#SlowdownPoint">
+        <rdfs:subClassOf rdf:resource="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#DegradationPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Track -->
+
+    <owl:Class rdf:about="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl#Track"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
