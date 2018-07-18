@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xml:base="file:/H:/PoC%20MESEA%20Mesure/dev/" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+<catalog xml:base="" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
 	
 	<uri name="http://www.mesea.fr/onto-maintenance/ontologies/main/trackMaintenance.owl" uri="ontologies/main/trackMaintenance.owl"/>
 	<uri name="http://www.mesea.fr/onto-maintenance/ontologies/main/degradationPoints.swd" uri="ontologies/main/degradationPoints.swd"/>

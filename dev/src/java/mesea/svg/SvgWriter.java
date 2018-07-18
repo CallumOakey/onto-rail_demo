@@ -54,7 +54,7 @@ public class SvgWriter {
 
         Integer j = 0;
         for(TrackMaintenance.Track track : tm.allTrack()){
-            for(TrackMaintenance.Rail rail : track.getHasRail()){
+            for(TrackMaintenance.Rail rail : track.getComposedOfRail()){
                 double y = (23.5 + j * 20);
                 double yMiddle = y + (GRAPH_HIGHT / 2);
 
@@ -81,13 +81,13 @@ public class SvgWriter {
                     previousValue = addGraphPoint(mesure, previousValue, xPoint, yPoint);
 
                     if (mesure != null && mesure.isAlertPoint()){
-                        statusPoints.add(new AlertPoint(i + HORIZONTAL_OFFSET, yMiddle - mesure.getValue(), mesure.getValue()));
+                        statusPoints.add(new AlertPoint(i + HORIZONTAL_OFFSET, yMiddle - mesure.getDeviationValue(), mesure.getDeviationValue()));
                     }
                     if (mesure != null && mesure.isInterventionPoint()){
-                        statusPoints.add(new InterventionPoint(i + HORIZONTAL_OFFSET, yMiddle - mesure.getValue(), mesure.getValue()));
+                        statusPoints.add(new InterventionPoint(i + HORIZONTAL_OFFSET, yMiddle - mesure.getDeviationValue(), mesure.getDeviationValue()));
                     }
                     if (mesure != null && mesure.isSlowdownPoint()){
-                        statusPoints.add(new SlowdownPoint(i + HORIZONTAL_OFFSET, yMiddle - mesure.getValue(), mesure.getValue()));
+                        statusPoints.add(new SlowdownPoint(i + HORIZONTAL_OFFSET, yMiddle - mesure.getDeviationValue(), mesure.getDeviationValue()));
                     }
 
                     mesure = mesure.getFollowedByMeasurement();
@@ -183,7 +183,7 @@ public class SvgWriter {
     }
 
     double addGraphPoint(TrackMaintenance.Measurement mesure, double previousValue, double x, double y){
-        double currentValue = mesure.getValue();
+        double currentValue = mesure.getDeviationValue();
         double verticalValue = previousValue - currentValue;
 
         retVal += " " + x + "," + (y + verticalValue);
